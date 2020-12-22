@@ -23,6 +23,7 @@ openssl pkcs12 -export -in <PEM_file>.pem -inkey <PRIVATE_KEY>.key -out <FILENAM
 ```diff
 - 目前 Search Ads 官方尚未提供各语言的 SDK，需开发者自行实现
 - Get User ACL 接口用于获取证书对应的 orgIds
+- 下文中出现的 9999999 或 1234567890 都是随机数字，需替换为实际数值
 - 其他所有接口都必须基于一个orgId范围内，即 Header 必须包括 Authorization: orgId=9999999
 ```
 
