@@ -25,6 +25,7 @@ openssl pkcs12 -export -in <PEM_file>.pem -inkey <PRIVATE_KEY>.key -out <FILENAM
 - Get User ACL 接口用于获取证书对应的 orgIds
 - 下文中出现的 9999999 或 1234567890 都是随机数字，需替换为实际数值
 - 其他所有接口都必须基于一个orgId范围内，即 Header 必须包括 Authorization: orgId=9999999
+- 接口请求如果返回 403，通常是因为 Header 未正确设置 (Authorization: orgId=)
 ```
 
 ### Get User ACL
