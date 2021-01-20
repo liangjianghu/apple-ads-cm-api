@@ -1,8 +1,8 @@
 # apple_search_ads_api
 
-Online Document: https://developer.apple.com/documentation/apple_search_ads
+官方 API 文档: https://developer.apple.com/documentation/apple_search_ads
 
-Latest PDF: https://github.com/liangjianghu/apple_search_ads_api/blob/main/Apple-Search-Ads-API-2.0_May_2020_release.pdf
+PDF 格式（2020 年 5 月更新）: https://github.com/liangjianghu/apple_search_ads_api/blob/main/Apple-Search-Ads-API-2.0_May_2020_release.pdf
 
 
 ## Overview
