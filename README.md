@@ -15,6 +15,8 @@ With the [Apple Search Ads Campaign Management API](https://developer.apple.com/
 
 [how to](https://developer.apple.com/documentation/apple_search_ads/authenticating_with_the_apple_search_ads_api)
 
+委托量江湖投放的广告主，请联系对接商务或优化师提供 API 证书
+
 ### Create a PKCS#12 File
 
 ```bash
