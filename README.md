@@ -1,5 +1,8 @@
 # apple_search_ads_api
 
+Online Document: https://developer.apple.com/documentation/apple_search_ads
+Latest PDF: https://github.com/liangjianghu/apple_search_ads_api/blob/main/Apple-Search-Ads-API-2.0_May_2020_release.pdf
+
 
 ## Overview
 With the [Apple Search Ads Campaign Management API](https://developer.apple.com/documentation/apple_search_ads), you can build campaigns containing total budgets and daily caps, and create ad groups containing keywords, Creative Sets, audience refinement criteria, and scheduling. You can implement your own keyword-bidding strategy or use the Search Match feature to automatically match your ad to relevant user searches on App Store Connect. When you are ready, promote your campaigns to multiple countries or regions and generate reports with meaningful metrics.
