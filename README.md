@@ -37,8 +37,26 @@ openssl pkcs12 -export -in <PEM_file>.pem -inkey <PRIVATE_KEY>.key -out <FILENAM
 #### 403 错误常见原因
 
 ```diff
-- 接口请求如果返回 403，通常是因为 Header 未正确设置 (Authorization: orgId=)
+- 接口请求如果返回如下错误信息，通常是因为 Header 未正确设置 (Authorization: orgId=)
+- 请指定正确的orgId参数，该参数可由 User ACL接口自行获取，或联系量江湖获得
 ```
+
+```
+{
+  "data": null,
+  "pagination": null,
+  "error": {
+    "errors": [
+      {
+        "messageCode": "FORBIDDEN",
+        "message": "User does not have required permissions",
+        "field": ""
+      }
+    ]
+  }
+}
+```
+
 
 ### Get User ACL
 
