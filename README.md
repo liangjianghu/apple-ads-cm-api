@@ -20,14 +20,8 @@ With the [Apple Search Ads Campaign Management API](https://developer.apple.com/
 * [广告主自行生成和下载证书说明](https://developer.apple.com/documentation/apple_search_ads/authenticating_with_the_apple_search_ads_api)
 * 委托量江湖投放的广告主，请联系对接商务或优化师提供 API 证书
 
-### Create a PKCS#12 File
+API 证书通常是一个 zip 压缩文件，解压后得到两个文件，下面用 <PEM_file>.pem 和 <PRIVATE_KEY>.key 代指。
 
-[Windows 系统安装 openssl](https://slproweb.com/products/Win32OpenSSL.html)
-
-```bash
-openssl pkcs12 -export -in <PEM_file>.pem -inkey <PRIVATE_KEY>.key -out <FILENAME>.p12
-
-```
 
 ### 特别提醒
 
@@ -69,9 +63,8 @@ openssl pkcs12 -export -in <PEM_file>.pem -inkey <PRIVATE_KEY>.key -out <FILENAM
 ```bash
 curl -v -X GET \
  https://api.searchads.apple.com/api/v3/acls \
- --cert-type p12 \
- --cert <FILENAME>.p12 \
- --pass <PASSWORD>
+ -k --cert <PEM_file>.pem \
+ --key <PRIVATE_KEY>.key
 ```
 
 #### Response
@@ -105,9 +98,8 @@ curl -v -X GET \
  https://api.searchads.apple.com/api/v3/campaigns \
  -H 'Authorization: orgId=9999999' \
  -H 'Content-Type: application/json' \
- --cert-type p12 \
- --cert <FILENAME>.p12 \
- --pass <PASSWORD>
+ -k --cert <PEM_file>.pem \
+ --key <PRIVATE_KEY>.key
 ```
 
 #### Response
@@ -150,9 +142,8 @@ curl -v -X GET \
  https://api.searchads.apple.com/api/v3/campaigns?fields=id,name,countriesOrRegions \
  -H 'Authorization: orgId=9999999' \
  -H 'Content-Type: application/json' \
- --cert-type p12 \
- --cert <FILENAME>.p12 \
- --pass <PASSWORD>
+ -k --cert <PEM_file>.pem \
+ --key <PRIVATE_KEY>.key
 ```
 
 #### Response
@@ -198,9 +189,8 @@ curl -v -X POST \
  https://api.searchads.apple.com/api/v3/reports/campaigns \
  -H 'Authorization: orgId=9999999' \
  -H 'Content-Type: application/json' \
- --cert-type p12 \
- --cert <FILENAME>.p12 \
- --pass <PASSWORD>
+ -k --cert <PEM_file>.pem \
+ --key <PRIVATE_KEY>.key \
  -d '{
     "startTime": "2020-11-01",
     "endTime": "2020-11-14",
