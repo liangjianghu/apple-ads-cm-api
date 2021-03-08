@@ -64,7 +64,7 @@ API 证书通常是一个 zip 压缩文件，解压后得到两个文件，下�
 ```bash
 curl -v -X GET \
  https://api.searchads.apple.com/api/v3/acls \
- -k --cert <PEM_file>.pem \
+ --cert <PEM_file>.pem \
  --key <PRIVATE_KEY>.key
 ```
 
@@ -99,7 +99,7 @@ curl -v -X GET \
  https://api.searchads.apple.com/api/v3/campaigns \
  -H 'Authorization: orgId=9999999' \
  -H 'Content-Type: application/json' \
- -k --cert <PEM_file>.pem \
+ --cert <PEM_file>.pem \
  --key <PRIVATE_KEY>.key
 ```
 
@@ -143,7 +143,7 @@ curl -v -X GET \
  https://api.searchads.apple.com/api/v3/campaigns?fields=id,name,countriesOrRegions \
  -H 'Authorization: orgId=9999999' \
  -H 'Content-Type: application/json' \
- -k --cert <PEM_file>.pem \
+ --cert <PEM_file>.pem \
  --key <PRIVATE_KEY>.key
 ```
 
@@ -190,7 +190,7 @@ curl -v -X POST \
  https://api.searchads.apple.com/api/v3/reports/campaigns \
  -H 'Authorization: orgId=9999999' \
  -H 'Content-Type: application/json' \
- -k --cert <PEM_file>.pem \
+ --cert <PEM_file>.pem \
  --key <PRIVATE_KEY>.key \
  -d '{
     "startTime": "2020-11-01",
