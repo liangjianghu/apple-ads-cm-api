@@ -13,11 +13,12 @@ With the [Apple Search Ads Campaign Management API](https://developer.apple.com/
 
 ### Generate an API Certificate
 
-[how to](https://developer.apple.com/documentation/apple_search_ads/authenticating_with_the_apple_search_ads_api)
-
-委托量江湖投放的广告主，请联系对接商务或优化师提供 API 证书
+* [广告主自行生成和下载证书说明](https://developer.apple.com/documentation/apple_search_ads/authenticating_with_the_apple_search_ads_api)
+* 委托量江湖投放的广告主，请联系对接商务或优化师提供 API 证书
 
 ### Create a PKCS#12 File
+
+[Windows 系统安装 openssl](https://slproweb.com/products/Win32OpenSSL.html)
 
 ```bash
 openssl pkcs12 -export -in <PEM_file>.pem -inkey <PRIVATE_KEY>.key -out <FILENAME>.p12
@@ -26,11 +27,16 @@ openssl pkcs12 -export -in <PEM_file>.pem -inkey <PRIVATE_KEY>.key -out <FILENAM
 
 ### 特别提醒
 
-```diff
+```
 - 目前 Search Ads 官方尚未提供各语言的 SDK，需开发者自行实现
 - Get User ACL 接口用于获取证书对应的 orgIds
 - 下文中出现的 9999999 或 1234567890 都是随机数字，需替换为实际数值
 - 其他所有接口都必须基于一个orgId范围内，即 Header 必须包括 Authorization: orgId=9999999
+```
+
+#### 403 错误常见原因
+
+```diff
 - 接口请求如果返回 403，通常是因为 Header 未正确设置 (Authorization: orgId=)
 ```
 
