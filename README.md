@@ -34,7 +34,7 @@ openssl pkcs12 -export -in <PEM_file>.pem -inkey <PRIVATE_KEY>.key -out <FILENAM
 - 其他所有接口都必须基于一个orgId范围内，即 Header 必须包括 Authorization: orgId=9999999
 ```
 
-#### 403 错误常见原因
+### HTTP 响应码为 403 ，并且返回如下数据
 
 ```diff
 - 接口请求如果返回如下错误信息，通常是因为 Header 未正确设置 (Authorization: orgId=)
