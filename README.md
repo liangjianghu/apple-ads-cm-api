@@ -23,7 +23,7 @@ Apple Search Ads Campaign Management API （下面简称API）是以程序化方
 
 开发者可通过此 API 获取花费报表、账户层级id-name对照等数据，将数据整合到 app 的后台系统中。
 
-## 获取 TOKEN ，实施 OAuth 认证
+## 实施 OAuth 认证，获取 access_token
 
 1.	联系量江湖（或者您的账户管理员），邀请您使用 ASA 平台，授予权限
 
@@ -88,12 +88,21 @@ with open('client_secret.txt', 'w') as output:
      output.write(client_secret.decode("utf-8"))
 ```
 
-5.	通过 client secret 从鉴权服务器获得访问令牌 access_token，有效期为 1 个小时
+5.	通过 client secret 从鉴权服务器获得访问令牌 **access_token**，有效期为 1 个小时
 
 ```shell
 curl -X POST "https://appleid.apple.com/auth/oauth2/token" \
 -H 'Content-Type: application/x-www-form-urlencoded' \
 -d 'grant_type=client_credentials&client_id={client_id}&client_secret={client_secret}&scope=searchadsorg'
+```
+
+```python
+import requests
+url = "https://appleid.apple.com/auth/oauth2/token"
+headers = {"Content-Type": "application/x-www-form-urlencoded"}
+data = { "grant_type": "client_credentials", "client_id": "XXXclient_id", "client_secret": "YYYclient_secret", "scope": "searchadsorg"}
+r = requests.post(url, headers=headers, data=data)
+print(r.json())
 ```
 
 6.	在请求广告管理 API 的 Header Authorization 参数中将访问令牌 access_token 作为 Bearer 传递，请求示例如下：
@@ -106,7 +115,7 @@ curl "https://api.searchads.apple.com/api/v4/campaigns"
 
 ## 接口请求示例
 
-### Get User ACL
+### 访问接口 Get User ACL，获取 orgIds
 
 #### Request
 
