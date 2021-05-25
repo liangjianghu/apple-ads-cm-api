@@ -72,7 +72,7 @@ payload['exp'] = expiration_timestamp
 payload['iss'] = team_id 
 
 # Path to signed private key.
-KEY_FILE = 'private-key.pem' 
+KEY_FILE = 'YOUR-PRIVATE-KEY.pem' 
 
 with open(KEY_FILE,'r') as key_file:
      key = ''.join(key_file.readlines())
