@@ -254,22 +254,14 @@ curl -v -X POST "https://api.searchads.apple.com/api/v4/reports/campaigns" \
  -H 'X-AP-Context: orgId={orgId}' \
  -H 'Content-Type: application/json' \
  -d '{
-    "startTime": "2020-11-01",
-    "endTime": "2020-11-14",
+    "startTime": "2021-06-14",
+    "endTime": "2021-06-16",
+    "granularity": "DAILY",
     "selector": {
         "orderBy": [
             {
-                "field": "countryOrRegion",
-                "sortOrder": "ASCENDING"
-            }
-        ],
-        "conditions": [
-            {
-                "field": "countriesOrRegions",
-                "operator": "CONTAINS_ANY",
-                "values": [
-                    "US"
-                ]
+                "field": "localSpend",
+                "sortOrder": "DESCENDING"
             }
         ],
         "pagination": {
@@ -277,13 +269,10 @@ curl -v -X POST "https://api.searchads.apple.com/api/v4/reports/campaigns" \
             "limit": 1000
         }
     },
-    "groupBy": [
-        "countryOrRegion"
-    ],
-    "timeZone": "UTC",
-    "returnRecordsWithNoMetrics": true,
-    "returnRowTotals": true,
-    "returnGrandTotals": true
+    "timeZone": "ORTZ",
+    "returnRecordsWithNoMetrics": false,
+    "returnRowTotals": false,
+    "returnGrandTotals": false
 }'
 ```
 
