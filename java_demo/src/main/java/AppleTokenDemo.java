@@ -15,7 +15,7 @@ import java.util.HashMap;
 /**
  * apple ads demo
  */
-public class TokenUtils {
+public class AppleTokenDemo {
 
     private static String sub = "SEARCHADS.27478e71-3bb0-4588-998c-182e2b405577";
     private static String iss = "SEARCHADS.27478e71-3bb0-4588-998c-182e2b405577";
@@ -28,13 +28,14 @@ public class TokenUtils {
         System.err.println(token);
     }
     /**
+     *
      * 生成token字符串的方法
      *
-     * @return
+     * @return token值
      */
     public static String createAccessJwtToken(String privateKeyPath) {
         PrivateKey privateKey = getECPrivateKey(privateKeyPath);
-        String accessToken = Jwts.builder().setHeader(new HashMap() {{
+        return Jwts.builder().setHeader(new HashMap() {{
                     put("alg",alg);
                     put("kid",key_id);
                 }})
@@ -45,15 +46,13 @@ public class TokenUtils {
                 .setExpiration(new Date(System.currentTimeMillis() + 86400*180*1000L))
                 .signWith(privateKey, SignatureAlgorithm.ES256)
                 .compact();
-
-        return accessToken;
     }
 
 
     /**
+     *
      * 获取PrivateKey对象
      *
-     * @return
      */
     private static PrivateKey getECPrivateKey(String privateKeyPath) {
         try {
@@ -97,9 +96,8 @@ public class TokenUtils {
             //可以进入到错误处理步骤中
             System.out.println("执行出错");
         }
-        String line = null;
-        while ((line = bs.readLine()) != null) {
-            System.out.println(line);
+        while ((bs.readLine()) != null) {
+            System.out.println(bs.readLine());
         }
     }
 }
