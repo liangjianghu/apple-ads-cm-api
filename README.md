@@ -8,6 +8,16 @@ Apple Search Ads Campaign Management API （下面简称API）是以程序化方
 
 最新版本为 V4：https://developer.apple.com/documentation/apple_search_ads/apple_search_ads_campaign_management_api_4
 
+关于主要的 OAuth 认证部分，可参考下列项目：
+
+1.  [Java 代码](https://github.com/liangjianghu/apple-ads-java-demo)
+
+2.  [PHP 代码](https://github.com/liangjianghu/apple-ads-php-demo)
+
+3.  [Python 代码](https://github.com/liangjianghu/apple-ads-python-demo)
+
+# 联系量江湖
+
 如有疑问，可联系量江湖技术支持，扫描下方二维码（左微信、右钉钉）
 
 <img src="https://user-images.githubusercontent.com/231417/110305605-d5980b00-8037-11eb-9aca-5cf425a55337.png" width="200" /> <img src="https://user-images.githubusercontent.com/231417/119437724-4c989200-bd51-11eb-9316-fa5c15ffd6f3.png" width="200" />
